@@ -1,0 +1,43 @@
+.boxed {
+    border: 1px solid #F2F2F2;
+    background-color: #F2F2F2;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.color-brand {
+    background-color: #522BBF;
+}
+
+.small-navbar-detail {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px !important;
+}
+
+.brand {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 0px !important;
+    font-weight: bold;
+}
+
+.separated {
+    margin-left: 30px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.send-message {
+    color: white;
+    margin-right: 60px;
+    margin-left: 20px;
+}
+
+.button-green {
+    color: white;
+    border: 1px solid #51d46f !important;
+    background-color: #51d46f !important;
+}

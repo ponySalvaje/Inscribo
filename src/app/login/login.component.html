@@ -1,0 +1,41 @@
+<nav class="navbar color-brand">
+    <div class="separated">
+        <p class="brand">Inscribo</p>
+        <p class="small-navbar-detail">Gestión de cuentas académicas</p>
+    </div>
+    <div class="">
+        <img src="../../assets/">
+        <span class="send-message">Enviar feedback</span>
+    </div>
+</nav>
+<div class="page-body-wrapper full-page-wrapper auth-page">
+    <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
+        <div class="row w-100">
+            <div class="col-lg-4 mx-auto boxed">
+                <div class="p-20 auto-form-wrapper">
+                    <h4>Ingreso</h4>
+                    <div class="form-group">
+                        <label class="label">Correo electrónico</label>
+                        <div class="input-group">
+                            <input [(ngModel)]="email" type="email" class="form-control" name="username" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label">Contraseña</label>
+                        <div class="input-group">
+                            <input [(ngModel)]="password" type="password" class="form-control" name="password" placeholder="*********">
+                        </div>
+                    </div>
+                    <div class="text-block text-left my-3">
+                        <a routerLink="/register" class="text-black text-small">Recuperar cuenta</a>
+                    </div>
+                    <div class="form-group">
+                        <button (click)="login()" class="btn btn-primary button-green submit-btn btn-block">Ingresar</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

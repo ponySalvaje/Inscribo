@@ -1,0 +1,134 @@
+.boxed {
+    border: 1px solid #F2F2F2;
+    background-color: #F2F2F2;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.color-brand {
+    background-color: #522BBF;
+}
+
+.small-navbar-detail {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px !important;
+}
+
+.brand {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 0px !important;
+    font-weight: bold;
+}
+
+.separated {
+    margin-left: 30px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.send-message {
+    color: white;
+    margin-right: 60px;
+    margin-left: 20px;
+}
+
+.button-green {
+    color: white;
+    border: 1px solid #51d46f !important;
+    background-color: #51d46f !important;
+}
+
+.row-margin {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 40px;
+}
+
+.slide-title {
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.slot-end {
+    margin-left: 125px;
+}
+
+.course-entry {
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.slide-group {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.slide-1 {
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    margin-left: -10px;
+    height: 540px;
+}
+
+.slide-2 {
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 540px;
+}
+
+.slide-3 {
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    margin-right: -10px;
+    height: 540px;
+}
+
+.label-total {
+    font-weight: bold;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.my-course-entries {
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.delete-entry {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.delete-entry:hover {
+    color: black;   
+}
+
+.separator {
+    border: 1px dashed #f2f2f2;
+}
+
+.separated-top {
+    margin-top: 40px;
+}
