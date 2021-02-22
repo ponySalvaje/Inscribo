@@ -1,0 +1,74 @@
+<nav class="navbar color-brand">
+    <div class="separated">
+        <p class="brand">Inscribo</p>
+        <p class="small-navbar-detail">ICJ Gestión Pública y Empresarial</p>
+    </div>
+    <div class="">
+        <mat-icon class="small-icon white">sms_failed</mat-icon>
+        <span class="send-message">Enviar feedback</span>
+        <mat-icon mat-icon-button [matMenuTriggerFor]="menuUser" class="small-icon white">account_circle</mat-icon>
+        <mat-menu #menuUser="matMenu">
+            <button (click)="registerSale()" mat-menu-item>
+                <span>Registrar Venta</span>
+            </button>
+        </mat-menu>
+        <span class="send-message">Iván</span>
+    </div>
+</nav>
+<div>
+    <div class="slide-2">
+        <div class="col-sm-12">
+            <h4 class="slide-title">Mis Ventas</h4>
+            <div class="form-group slide-group">
+                <label class="label">Buscar</label>
+                <div class="row">
+                    <div class="input-group col-sm-9">
+                        <input type="text" class="form-control" name="findCourseName" placeholder="">
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-primary button-green submit-btn btn-block"><mat-icon>search</mat-icon></button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group slide-group">
+                <label class="label">Resultados</label>
+                <div class="course-entry row" *ngFor="let salesDetail of mySales">
+                    <div class="col-sm-1">
+                        {{salesDetail.code}}
+                    </div>
+                    <div class="col-sm-1">
+                        {{salesDetail.documentNumber}}
+                    </div>
+                    <div class="col-sm-1">
+                        {{salesDetail.firstName}}
+                    </div>
+                    <div class="col-sm-1">
+                        {{salesDetail.lastName}}
+                    </div>
+                    <div class="col-sm-2">
+                        {{salesDetail.phoneNumber}}
+                    </div>
+                    <div class="col-sm-2">
+                        {{salesDetail.certified}}
+                    </div>
+                    <div class="col-sm-3">
+                        {{salesDetail.startDate}} - {{salesDetail.endDate}}
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="mat-button-class" mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon class="small-icon">more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item>
+                                <span>Ver detalle</span>
+                            </button>
+                            <button mat-menu-item>
+                                <span>Agregar</span>
+                            </button>
+                        </mat-menu>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

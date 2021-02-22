@@ -4,8 +4,15 @@
         <p class="small-navbar-detail">ICJ Gestión Pública y Empresarial</p>
     </div>
     <div class="">
-        <img src="../../assets/">
+        <mat-icon class="small-icon white">sms_failed</mat-icon>
         <span class="send-message">Enviar feedback</span>
+        <mat-icon mat-icon-button [matMenuTriggerFor]="menuUser" class="small-icon white">account_circle</mat-icon>
+        <mat-menu #menuUser="matMenu">
+            <button (click)="mySales()" mat-menu-item>
+                <span>Mis ventas</span>
+            </button>
+        </mat-menu>
+        <span class="send-message">Iván</span>
     </div>
 </nav>
 <div class="row row-margin">
@@ -36,21 +43,34 @@
                     <input [(ngModel)]="findCourseName" type="text" class="form-control" name="findCourseName" placeholder="">
                 </div>
                 <div class="col-sm-3">
-                    <button (click)="findByCourseName()" class="btn btn-primary button-green submit-btn btn-block">Buscar</button>
+                    <button (click)="findByCourseName()" class="btn btn-primary button-green submit-btn btn-block"><mat-icon>search</mat-icon></button>
                 </div>
             </div>
         </div>
         <div class="form-group slide-group">
             <label class="label">Resultados</label>
             <div class="course-entry row" *ngFor="let course of courses">
-                <div>
-                    {{course.code}} {{course.name}}
+                <div class="col-sm-2">
+                    {{course.code}}
                 </div>
-                <div class="slot-end">
+                <div class="col-sm-5">
+                    {{course.name}}
+                </div>
+                <div class="col-sm-4">
                     {{course.startDate}} - {{course.endDate}}
                 </div>
-                <div>
-
+                <div class="col-sm-1">
+                    <button class="mat-button-class" mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon class="small-icon">more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button (click)="goToDetail(course.id)" mat-menu-item>
+                            <span>Ver detalle</span>
+                        </button>
+                        <button (click)="pushToList(course.id)" mat-menu-item>
+                            <span>Agregar</span>
+                        </button>
+                    </mat-menu>
                 </div>
             </div>
         </div>
@@ -62,14 +82,14 @@
                 <label class="label col-sm-3">Total</label>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6 align-right">
-                    <p class="label-total">S/. 500</p>
+                    <p class="label-total">S/. {{summaryPrice}}</p>
                 </div>
             </div>
             <div class="row summary-margin">
                 <label class="label col-sm-3">Cursos</label>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6 align-right">
-                    <p class="label">2</p>
+                    <p class="label">{{myCourses.length}}</p>
                 </div>
             </div>
         </div>
