@@ -34,46 +34,57 @@
             <button (click)="continueRegistration()" class="btn btn-primary button-green submit-btn btn-block">Continuar</button>
         </div>
     </div>
-    <div class="col-sm-6 slide-2">
-        <h4 class="slide-title">Cursos</h4>
-        <div class="form-group slide-group">
-            <label class="label">Buscar</label>
-            <div class="row">
-                <div class="input-group col-sm-9">
-                    <input [(ngModel)]="findCourseName" type="text" class="form-control" name="findCourseName" placeholder="">
+    <div class="col-sm-6 slide-2" [ngClass]="{'show-content': showCourseDetail}">
+        <div class="row">
+            <div class="col-sm-10">
+                <h4 class="slide-title">Cursos</h4>
+            </div>
+            <div *ngIf="showCourseDetail" (click)="returnToDashboard()" class="col-sm-2 close-icon">
+                <mat-icon>clear</mat-icon>
+            </div>
+        </div>
+    
+        <div *ngIf="!showCourseDetail">
+            <div class="form-group slide-group">
+                <label class="label">Buscar</label>
+                <div class="row">
+                    <div class="input-group col-sm-9">
+                        <input [(ngModel)]="findCourseName" type="text" class="form-control" name="findCourseName" placeholder="">
+                    </div>
+                    <div class="col-sm-3">
+                        <button (click)="findByCourseName()" class="btn btn-primary button-green submit-btn btn-block"><mat-icon>search</mat-icon></button>
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <button (click)="findByCourseName()" class="btn btn-primary button-green submit-btn btn-block"><mat-icon>search</mat-icon></button>
+            </div>
+            <div class="form-group slide-group">
+                <label class="label">Resultados</label>
+                <div class="course-entry row" *ngFor="let course of courses">
+                    <div class="col-sm-2">
+                        {{course.code}}
+                    </div>
+                    <div class="col-sm-5">
+                        {{course.name}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{course.startDate}} - {{course.endDate}}
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="mat-button-class" mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon class="small-icon">more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button (click)="goToDetail(course.id)" mat-menu-item>
+                                <span>Ver detalle</span>
+                            </button>
+                            <button (click)="pushToList(course.id)" mat-menu-item>
+                                <span>Agregar</span>
+                            </button>
+                        </mat-menu>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="form-group slide-group">
-            <label class="label">Resultados</label>
-            <div class="course-entry row" *ngFor="let course of courses">
-                <div class="col-sm-2">
-                    {{course.code}}
-                </div>
-                <div class="col-sm-5">
-                    {{course.name}}
-                </div>
-                <div class="col-sm-4">
-                    {{course.startDate}} - {{course.endDate}}
-                </div>
-                <div class="col-sm-1">
-                    <button class="mat-button-class" mat-icon-button [matMenuTriggerFor]="menu">
-                        <mat-icon class="small-icon">more_vert</mat-icon>
-                    </button>
-                    <mat-menu #menu="matMenu">
-                        <button (click)="goToDetail(course.id)" mat-menu-item>
-                            <span>Ver detalle</span>
-                        </button>
-                        <button (click)="pushToList(course.id)" mat-menu-item>
-                            <span>Agregar</span>
-                        </button>
-                    </mat-menu>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <div class="col-sm-3 slide-3">
         <h4 class="slide-title">Resumen</h4>
@@ -127,4 +138,7 @@
             </div>
         </div>
     </div>
+</div>
+<div class="modal-dashboard" [ngClass]="{'hide-modal': !showCourseDetail}">
+
 </div>

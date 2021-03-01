@@ -15,6 +15,8 @@ export class DashboardComponent implements OnInit {
   public myCourses: any = [];
   public summaryPrice: number = 0;
 
+  public showCourseDetail: boolean = false;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -107,7 +109,11 @@ export class DashboardComponent implements OnInit {
   }
 
   goToDetail(id: any) {
+    this.showCourseDetail = true;
+  }
 
+  returnToDashboard() {
+    this.showCourseDetail = false;
   }
 
 }
